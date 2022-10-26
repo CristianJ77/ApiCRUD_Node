@@ -3,4 +3,4 @@ const handleHttpError =  (res,message = 'algo sucedio',code=403) =>{
     res.status({error:message});
 }
 
-module.exports = {handleHttpError}
+module.exports = {handleHttpError};
