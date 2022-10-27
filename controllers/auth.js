@@ -54,10 +54,9 @@ const registerCtrl = async (req,res) => {
       console.log({hashPassword})
   
       const check = await compare(req.password, hashPassword)
-      if(check == false){
+      if(!check){
         handleHttpError(res, "PASSWORD_INVALID", 401);
-        console.log(check)
-        return check
+        return
       }
   
       user.set('password', undefined, {strict:false})
